@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
             return db.all('SELECT * FROM products');
         })
         .then((products) => {
-            res.render('pages/products', { data: products, title: "Products" });
+            res.render('pages/product', { data: products, title: "Products" });
         })
         .catch((error) => {
             console.error(error);
