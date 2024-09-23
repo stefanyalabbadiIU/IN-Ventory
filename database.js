@@ -38,7 +38,7 @@ export const populateDB = () => {
                 ('Bagel with Cream Cheese', 'Toasted bagel served with a side of cream cheese.', 3.50, 'Pastry')
         `);
     }).then(() => {
-        cconsole.log('Coffee shop database setup complete.');
+        console.log('Coffee shop database setup complete.');
     });
 }
 
