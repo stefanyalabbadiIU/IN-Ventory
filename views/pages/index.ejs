@@ -1,0 +1,45 @@
+<%- include('../partials/head.ejs') %>
+
+<body>
+
+
+    <div class="container">
+        <!-- title -->
+        <div class="mt-4 p-5 bg-warning text-white rounded">
+            <h1><%= title %></h1>
+        </div>
+        <!-- nav -->
+        <%- include('../partials/menu.ejs') %>
+
+        <!-- reminders -->
+        <%- include('../partials/menu.ejs') %>
+
+        <!-- Products Section -->
+        <div class="row">
+            <% if (data && data.length > 0) { %>
+                <% data.forEach((product, index) => { %>
+                    <div class="col-md-4 mb-4"> 
+                        <p class="note">
+                            <img src="/images/remind.png" class="img-fluid mb-2" alt="">
+                            <br>
+                            <strong>Name:</strong> <%= product.name %><br>
+                            <strong>Description:</strong> <%= product.description %><br>
+                            <strong>Price:</strong> $<%= product.price.toFixed(2) %><br>
+                            <strong>Category:</strong> <%= product.category %><br>
+                            <br> 
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#purchase<%= index %>">
+                                Add To Cart
+                            </button>
+                        </p>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p class="text-center">No products available at the moment.</p>
+            <% } %>
+        </div>
+        
+        <%- include('../partials/footer.ejs') %>
+    </div>
+    
+</body>
+</html>
